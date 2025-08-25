@@ -4,6 +4,7 @@ import { config } from 'dotenv';
 import connectDB from './config/database.js'; 
 import  errorHandler  from './middleware/errorHandler.js';
 import plantRoutes from './routes/plants.js';
+//
 
 // Load environment variables
 config();
