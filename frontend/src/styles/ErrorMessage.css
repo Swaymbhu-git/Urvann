@@ -10,7 +10,6 @@
   background-color: var(--bg-primary);
 }
 
-/* Error type variants */
 .error-message.error {
   border-left-color: var(--error-color);
   background-color: rgba(244, 67, 54, 0.05);
@@ -31,7 +30,6 @@
   background-color: rgba(76, 175, 80, 0.05);
 }
 
-/* Error icon */
 .error-icon {
   font-size: var(--font-size-xl);
   flex-shrink: 0;
@@ -54,7 +52,7 @@
   color: var(--success-color);
 }
 
-/* Error content */
+
 .error-content {
   flex: 1;
   display: flex;
@@ -70,7 +68,6 @@
   font-weight: var(--font-weight-medium);
 }
 
-/* Retry button */
 .retry-button {
   align-self: flex-start;
   background-color: var(--primary-color);
@@ -102,7 +99,6 @@
   outline-offset: 2px;
 }
 
-/* Compact variant */
 .error-message.compact {
   padding: var(--spacing-md);
   margin: var(--spacing-sm) 0;
@@ -121,7 +117,6 @@
   font-size: var(--font-size-xs);
 }
 
-/* Inline variant */
 .error-message.inline {
   display: inline-flex;
   padding: var(--spacing-sm);
@@ -139,7 +134,6 @@
   font-size: var(--font-size-sm);
 }
 
-/* Dismissible variant */
 .error-message.dismissible {
   position: relative;
 }
@@ -173,7 +167,6 @@
   outline-offset: 2px;
 }
 
-/* Animation for error appearance */
 @keyframes errorSlideIn {
   from {
     opacity: 0;
@@ -189,7 +182,6 @@
   animation: errorSlideIn 0.3s ease-out;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .error-message {
     padding: var(--spacing-md);
@@ -227,7 +219,6 @@
   }
 }
 
-/* High contrast mode support */
 @media (prefers-contrast: high) {
   .error-message {
     border: 2px solid;
@@ -259,7 +250,6 @@
   }
 }
 
-/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .error-message {
     animation: none;

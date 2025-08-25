@@ -1,13 +1,10 @@
 import mongoose from 'mongoose';
 const { connect, connection } = mongoose;
 import { config } from 'dotenv';
-// Correct - importing the model itself
 import Plant from '../models/Plant.js';
 
-// Load environment variables
 config();
 
-// Sample plant data
 const plants = [
   {
     name: "Snake Plant Laurentii",
@@ -319,19 +316,15 @@ const plants = [
 
 const seedDatabase = async () => {
   try {
-    // Connect to MongoDB
     await connect(process.env.MONGODB_URI);
     console.log('Connected to MongoDB');
 
-    // Clear existing plants
     await Plant.deleteMany({});
     console.log('Cleared existing plants');
 
-    // Insert new plants
     await Plant.insertMany(plants);
     console.log(`Successfully seeded ${plants.length} plants`);
 
-    // Close connection
     await connection.close();
     console.log('Database connection closed');
     

@@ -4,7 +4,6 @@ import '../styles/SearchBar.css';
 const SearchBar = ({ value, onChange, placeholder = 'Search plants...' }) => {
   const [localValue, setLocalValue] = useState(value || '');
 
-  // Debounce the search input
   useEffect(() => {
     const timer = setTimeout(() => {
       onChange(localValue);
@@ -13,7 +12,6 @@ const SearchBar = ({ value, onChange, placeholder = 'Search plants...' }) => {
     return () => clearTimeout(timer);
   }, [localValue, onChange]);
 
-  // Update local value when prop changes
   useEffect(() => {
     setLocalValue(value || '');
   }, [value]);

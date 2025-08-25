@@ -4,7 +4,7 @@
   padding: 0 var(--spacing-md);
 }
 
-/* Header Section */
+
 .catalog-header {
   text-align: center;
   margin-bottom: var(--spacing-xl);
@@ -26,7 +26,7 @@
   margin: 0 auto;
 }
 
-/* Filters Section */
+
 .filters-section {
   background-color: var(--bg-primary);
   border-radius: var(--border-radius);
@@ -66,7 +66,7 @@
   transform: translateY(0);
 }
 
-/* Active Filters */
+
 .active-filters {
   display: flex;
   align-items: center;
@@ -94,12 +94,11 @@
   gap: var(--spacing-xs);
 }
 
-/* Catalog Content */
 .catalog-content {
   min-height: 400px;
 }
 
-/* Results Info */
+
 .results-info {
   display: flex;
   justify-content: space-between;
@@ -115,7 +114,7 @@
   color: var(--text-secondary);
 }
 
-/* Plants Grid */
+
 .plants-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -123,7 +122,7 @@
   margin-bottom: var(--spacing-xl);
 }
 
-/* No Results */
+
 .no-results {
   text-align: center;
   padding: var(--spacing-xxl);
@@ -155,7 +154,6 @@
   margin-right: auto;
 }
 
-/* Loading and Error States */
 .catalog-content .loader-container {
   padding: var(--spacing-xxl);
 }
@@ -164,7 +162,7 @@
   margin: var(--spacing-xl) 0;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .plant-catalog {
     padding: 0 var(--spacing-sm);
@@ -238,7 +236,6 @@
   }
 }
 
-/* Animation for grid items */
 @keyframes gridItemFadeIn {
   from {
     opacity: 0;
@@ -254,7 +251,7 @@
   animation: gridItemFadeIn 0.3s ease-out;
 }
 
-/* Staggered animation for multiple items */
+
 .plants-grid > *:nth-child(1) { animation-delay: 0.05s; }
 .plants-grid > *:nth-child(2) { animation-delay: 0.1s; }
 .plants-grid > *:nth-child(3) { animation-delay: 0.15s; }
@@ -262,7 +259,7 @@
 .plants-grid > *:nth-child(5) { animation-delay: 0.25s; }
 .plants-grid > *:nth-child(6) { animation-delay: 0.3s; }
 
-/* High contrast mode support */
+
 @media (prefers-contrast: high) {
   .filters-section {
     border: 2px solid var(--text-primary);

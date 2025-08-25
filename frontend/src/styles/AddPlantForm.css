@@ -4,7 +4,7 @@
   padding: 0 var(--spacing-md);
 }
 
-/* Form Header */
+
 .form-header {
   text-align: center;
   margin-bottom: var(--spacing-xl);
@@ -12,7 +12,7 @@
   position: relative;
 }
 
-/* Admin Status */
+
 .admin-status {
   display: flex;
   justify-content: center;
@@ -71,7 +71,7 @@
   color: var(--text-secondary);
 }
 
-/* Success Message */
+
 .success-message {
   display: flex;
   align-items: center;
@@ -102,7 +102,7 @@
   }
 }
 
-/* Plant Form */
+
 .plant-form {
   background-color: var(--bg-primary);
   padding: var(--spacing-xl);
@@ -111,7 +111,7 @@
   border: 1px solid var(--border-light);
 }
 
-/* Form Groups */
+
 .form-group {
   margin-bottom: var(--spacing-lg);
 }
@@ -159,7 +159,7 @@
   box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1);
 }
 
-/* Form Help Text */
+
 .form-help {
   display: block;
   font-size: var(--font-size-sm);
@@ -168,7 +168,7 @@
   line-height: 1.4;
 }
 
-/* Error Text */
+
 .error-text {
   display: block;
   font-size: var(--font-size-sm);
@@ -177,7 +177,7 @@
   font-weight: var(--font-weight-medium);
 }
 
-/* Checkbox Styling */
+
 .checkbox-label {
   display: flex;
   align-items: center;
@@ -223,7 +223,7 @@
   font-weight: var(--font-weight-medium);
 }
 
-/* Suggested Categories */
+
 .suggested-categories {
   margin-top: var(--spacing-md);
 }
@@ -270,7 +270,6 @@
   outline-offset: 2px;
 }
 
-/* Form Actions */
 .form-actions {
   margin-top: var(--spacing-xl);
   display: flex;
@@ -316,7 +315,6 @@
   outline-offset: 2px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .add-plant-form {
     padding: 0 var(--spacing-sm);
@@ -372,7 +370,6 @@
   }
 }
 
-/* High contrast mode support */
 @media (prefers-contrast: high) {
   .plant-form {
     border: 2px solid var(--text-primary);
@@ -401,7 +398,6 @@
   }
 }
 
-/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .form-input,
   .form-checkbox,

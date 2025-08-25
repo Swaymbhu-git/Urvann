@@ -26,7 +26,7 @@
   transform: translateY(-2px);
 }
 
-/* Card Header */
+
 .plant-card-header {
   display: flex;
   justify-content: space-between;
@@ -44,7 +44,7 @@
   flex: 1;
 }
 
-/* Stock Status */
+
 .stock-status {
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
@@ -67,7 +67,7 @@
   border: 1px solid rgba(244, 67, 54, 0.3);
 }
 
-/* Price */
+
 .plant-price {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
@@ -75,7 +75,7 @@
   margin-bottom: var(--spacing-md);
 }
 
-/* Categories */
+
 .plant-categories {
   display: flex;
   flex-wrap: wrap;
@@ -100,7 +100,7 @@
   border-color: var(--primary-light);
 }
 
-/* Out of Stock Overlay */
+
 .out-of-stock-overlay {
   position: absolute;
   top: 0;
@@ -130,7 +130,7 @@
   box-shadow: var(--shadow-medium);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .plant-card {
     padding: var(--spacing-md);
@@ -174,7 +174,7 @@
   }
 }
 
-/* Animation for card entrance */
+
 @keyframes cardFadeIn {
   from {
     opacity: 0;
@@ -190,7 +190,7 @@
   animation: cardFadeIn 0.3s ease-out;
 }
 
-/* High contrast mode support */
+
 @media (prefers-contrast: high) {
   .plant-card {
     border: 2px solid var(--text-primary);

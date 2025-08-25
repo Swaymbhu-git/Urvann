@@ -3,25 +3,23 @@ import { body, validationResult } from 'express-validator';
 import Plant from '../models/Plant.js';
 const router = Router();
 
-// GET /api/plants - Fetch plants with optional search and filter
 router.get('/', async (req, res) => {
   try {
     const { search, category } = req.query;
     
-    // Build query object
+
     const query = {};
     
-    // Add search filter (case-insensitive)
+
     if (search && search.trim()) {
       query.name = { $regex: search.trim(), $options: 'i' };
     }
     
-    // Add category filter
+
     if (category && category.trim()) {
       query.categories = category.trim();
     }
-    
-    // Execute query with sorting
+
     const plants = await Plant.find(query).sort({ name: 1 });
     
     res.json({
@@ -39,7 +37,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET /api/plants/categories - Get all unique categories
 router.get('/categories', async (req, res) => {
   try {
     const categories = await Plant.distinct('categories');
@@ -57,7 +54,6 @@ router.get('/categories', async (req, res) => {
   }
 });
 
-// GET /api/plants/:id - Get single plant by ID
 router.get('/:id', async (req, res) => {
   try {
     const plant = await Plant.findById(req.params.id);
@@ -91,9 +87,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// POST /api/plants - Create a new plant
 router.post('/', [
-  // Validation middleware
   body('name')
     .trim()
     .notEmpty()
@@ -107,7 +101,6 @@ router.post('/', [
     .withMessage('Price cannot be negative'),
   body('categories')
     .custom((value) => {
-      // Handle both string (comma-separated) and array inputs
       if (typeof value === 'string') {
         const categories = value.split(',').map(cat => cat.trim()).filter(cat => cat);
         return categories.length > 0;
@@ -123,7 +116,6 @@ router.post('/', [
     .withMessage('inStock must be a boolean value')
 ], async (req, res) => {
   try {
-    // Check for validation errors
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({
@@ -135,12 +127,10 @@ router.post('/', [
 
     let { name, price, categories, inStock = true } = req.body;
     
-    // Process categories - handle both string and array inputs
     if (typeof categories === 'string') {
       categories = categories.split(',').map(cat => cat.trim()).filter(cat => cat);
     }
     
-    // Create new plant
     const plant = new Plant({
       name: name.trim(),
       price: parseFloat(price),
@@ -158,7 +148,6 @@ router.post('/', [
   } catch (error) {
     console.error('Error creating plant:', error);
     
-    // Handle duplicate name error
     if (error.code === 11000) {
       return res.status(400).json({
         success: false,
@@ -167,7 +156,6 @@ router.post('/', [
       });
     }
     
-    // Handle validation errors
     if (error.name === 'ValidationError') {
       const validationErrors = Object.values(error.errors).map(err => ({
         field: err.path,

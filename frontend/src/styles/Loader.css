@@ -19,7 +19,7 @@
   animation: spin 1s linear infinite;
 }
 
-/* Size variants */
+
 .loader.small .loader-spinner {
   width: 20px;
   height: 20px;
@@ -38,7 +38,7 @@
   border-width: 4px;
 }
 
-/* Spinner animation */
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -48,7 +48,7 @@
   }
 }
 
-/* Loader message */
+
 .loader-message {
   margin-top: var(--spacing-md);
   font-size: var(--font-size-md);
@@ -57,7 +57,7 @@
   font-weight: var(--font-weight-medium);
 }
 
-/* Inline loader variant */
+
 .loader.inline {
   display: inline-flex;
   padding: 0;
@@ -76,7 +76,7 @@
   margin-left: var(--spacing-sm);
 }
 
-/* Pulsing dots loader variant */
+
 .loader.dots {
   display: flex;
   gap: var(--spacing-xs);
@@ -116,7 +116,7 @@
   }
 }
 
-/* Overlay loader */
+
 .loader-overlay {
   position: fixed;
   top: 0;
@@ -140,7 +140,7 @@
   text-align: center;
 }
 
-/* Skeleton loader variant */
+
 .loader.skeleton {
   background: linear-gradient(
     90deg,
@@ -166,7 +166,7 @@
   }
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .loader-container {
     padding: var(--spacing-lg);
@@ -194,7 +194,7 @@
   }
 }
 
-/* High contrast mode support */
+
 @media (prefers-contrast: high) {
   .loader-spinner {
     border-color: var(--text-primary);
@@ -212,7 +212,7 @@
   }
 }
 
-/* Reduced motion support */
+
 @media (prefers-reduced-motion: reduce) {
   .loader-spinner {
     animation: none;

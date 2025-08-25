@@ -10,26 +10,21 @@ function App() {
   const [isAdmin, setIsAdmin] = useState(false);
   const location = useLocation();
 
-  // Check for admin key in URL parameters
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
     const adminKey = urlParams.get('admin_key');
     
-    // Secret admin key as specified in requirements
     const SECRET_ADMIN_KEY = 'mysecretpassword';
     
     if (adminKey === SECRET_ADMIN_KEY) {
       setIsAdmin(true);
-      // Store admin status in sessionStorage to persist during session
       sessionStorage.setItem('isAdmin', 'true');
     } else {
-      // Check if admin status was previously set in this session
       const storedAdminStatus = sessionStorage.getItem('isAdmin');
       setIsAdmin(storedAdminStatus === 'true');
     }
   }, [location.search]);
 
-  // Component to protect admin routes
   const ProtectedAdminRoute = ({ children }) => {
     if (!isAdmin) {
       return <Navigate to="/" replace />;

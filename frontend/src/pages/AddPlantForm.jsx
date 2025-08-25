@@ -19,7 +19,6 @@ const AddPlantForm = () => {
     validationErrors: {}
   });
 
-  // Predefined categories for suggestions
   const suggestedCategories = [
     'Indoor', 'Outdoor', 'Succulent', 'Air Purifying', 'Home Decor',
     'Beginner Friendly', 'Low Maintenance', 'Flowering', 'Herbs',
@@ -27,7 +26,6 @@ const AddPlantForm = () => {
     'Fragrant', 'Colorful Foliage', 'Low Light', 'Desert Plants'
   ];
 
-  // Handle input changes
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
@@ -35,7 +33,6 @@ const AddPlantForm = () => {
       [name]: type === 'checkbox' ? checked : value
     }));
     
-    // Clear validation error for this field
     if (state.validationErrors[name]) {
       setState(prev => ({
         ...prev,
@@ -47,7 +44,6 @@ const AddPlantForm = () => {
     }
   };
 
-  // Validate form data
   const validateForm = () => {
     const errors = {};
     
@@ -70,11 +66,9 @@ const AddPlantForm = () => {
     return errors;
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Validate form
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
       setState(prev => ({
@@ -94,7 +88,6 @@ const AddPlantForm = () => {
         validationErrors: {}
       }));
       
-      // Prepare data for submission
       const plantData = {
         name: formData.name.trim(),
         price: parseFloat(formData.price),
@@ -111,7 +104,6 @@ const AddPlantForm = () => {
         error: null
       }));
       
-      // Reset form
       setFormData({
         name: '',
         price: '',
@@ -119,7 +111,6 @@ const AddPlantForm = () => {
         inStock: true
       });
       
-      // Auto-hide success message after 3 seconds
       setTimeout(() => {
         setState(prev => ({ ...prev, success: false }));
       }, 3000);
@@ -135,7 +126,6 @@ const AddPlantForm = () => {
     }
   };
 
-  // Add suggested category to input
   const addCategory = (category) => {
     const currentCategories = formData.categories
       .split(',')
@@ -150,7 +140,6 @@ const AddPlantForm = () => {
 
   const { loading, error, success, validationErrors } = state;
 
-  // Admin logout function
   const handleAdminLogout = () => {
     sessionStorage.removeItem('isAdmin');
     window.location.href = '/';

@@ -8,13 +8,13 @@ You can try out the live application here:
 
  AS USER
 
-### ➡️ **[https://ask-the-source.vercel.app/](https://ask-the-source.vercel.app/)**
+### ➡️ **[https://urvann-qw54.vercel.app/](https://urvann-qw54.vercel.app/)**
 
 AS ADMIN
 
-### ➡️ **[https://ask-the-source.vercel.app/](https://ask-the-source.vercel.app/)**
+### ➡️ **[https://urvann-qw54.vercel.app/?admin_key=mysecretpassword](https://urvann-qw54.vercel.app/?admin_key=mysecretpassword)**
 
-You can change the password from backend server file
+You can change the password in App.jsx
 
 > **⚠️ Server Note**
 > The backend for this project is hosted on a free-tier service. It may go to sleep due to inactivity. If the application is unresponsive on your first attempt, please wait 30-60 seconds for the server to "wake up" and then refresh the page.
